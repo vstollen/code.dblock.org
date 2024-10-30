@@ -123,4 +123,6 @@ The value can thus be rendered directly without extra quotes.
 </script>
 {% endhighlight %}
 
+In Rails, something similar is available as `"<%= j name %>"`, or [escape_javascript](https://api.rubyonrails.org/classes/ActionView/Helpers/JavaScriptHelper.html#method-i-escape_javascript).
+
 See [slack-strava@3a70e5f7](https://github.com/dblock/slack-strava/commit/3a70e5f70b778a79b79a1406ee629e379b07094e) for a complete implementation with tests.
