@@ -73,7 +73,7 @@ $ irb
 3.3.5 :002 > ERB::Util::html_escape("Daniel's Team")
  => "Daniel&#39;s Team" 
 3.3.5 :003 > ERB::Util::html_escape("\"Daniel's Team\"")
- => "&quot;Daniel&#39;s Team&quot;" 
+ => "&quot;Daniel&#39;s Team&quot;"
 {% endhighlight %}
 
 However, it will still render a carriage return, causing the following invalid JavaScript with the team name is "line1\nline2".
@@ -95,7 +95,7 @@ This is because ERB considers line breaks as safe.
  => "line1\nline2"
 {% endhighlight %}
 
-We can fix this by converting the safe value to JSON. This will quote and escape it for us, and it even works for `nil`.
+We can fix this by converting the safe value to JSON. This will quote and escape it for us, works for `nil`, and will prevent XSS.
 
 {% highlight bash %}
 3.3.5 :001 > require 'erb'
@@ -108,6 +108,8 @@ We can fix this by converting the safe value to JSON. This will quote and escape
  => "\"line1\\nline2\"" 
 3.3.5 :006 > "\"&quot;Daniel&#39;s Team&quot;\""
  => "\"line1\\nline2\"" 
+3.3.5 :007 > JSON.generate(ERB::Util::html_escape("<script>alert('xss');</script>"))
+ => "\"&lt;script&gt;alert(&#39;xss&#39;);&lt;/script&gt;\""
 {% endhighlight %}
 
 The value can thus be rendered directly without extra quotes.
