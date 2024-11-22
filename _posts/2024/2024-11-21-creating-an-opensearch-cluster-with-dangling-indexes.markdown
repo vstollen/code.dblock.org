@@ -84,7 +84,7 @@ curl -X POST http://localhost:9200/movies/_doc --json '{"director":"Bennett Mill
 }
 {% endhighlight %}
 
-Remove the node replicas.
+Remove the index replicas.
 
 {% highlight bash %}
 curl -X PUT  http://localhost:9200/movies/_settings --json '{"index.number_of_replicas":0}'
