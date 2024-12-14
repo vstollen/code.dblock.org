@@ -81,7 +81,7 @@ java:
   count: 34
 javascript:
   name: javascript
-  count: 12
+  count: 13
 jenkins:
   name: jenkins
   count: 7
@@ -111,10 +111,10 @@ msi:
   count: 19
 open source:
   name: open source
-  count: 55
+  count: 57
 opensearch:
   name: opensearch
-  count: 6
+  count: 12
 organizations:
   name: organizations
   count: 22
@@ -141,16 +141,16 @@ rspec:
   count: 10
 ruby:
   name: ruby
-  count: 114
+  count: 116
 s3:
   name: s3
   count: 9
 security:
   name: security
-  count: 28
+  count: 29
 slack:
   name: slack
-  count: 16
+  count: 17
 speaking:
   name: speaking
   count: 31
